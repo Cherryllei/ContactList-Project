@@ -4,26 +4,37 @@ import FinalProject.Contact;
 import FinalProject.ContactList;
 
 /**
- * This class TestContactList by adding user’s personal information. This class
- * also, adds new contacts, prints a complete list of all contacts, retrieve
- * contacts by last name, save and open the data file from disk.
+ * Creates an object of ContactList and an object of Contact, and 
+ * calls all methods on them.
  * 
  * @author Chunlei Li
  */
 public class TestContactList {
     public static void main(String[] args) {
-        ContactList contact1 = new ContactList();
-        Contact test = new Contact();
-        test.getFirstName();
-        test.getLastName();
-        test.getStreetAddress();
-        test.getEmailAddress();
-        test.getPhoneNumber();
-        test.getNotes();
-        contact1.addContact(test);
-        contact1.printContactList();
-        contact1.getContact("Li");
-        contact1.saveToDisk();
-        contact1.openFile();
+        ContactList allContacts = new ContactList();
+        Contact contact1 = new Contact();
+        
+        contact1.setLastName("Smith");
+        contact1.setFirstName("John");
+        contact1.setStreetAddress("235 Fake Rd., Palo Alto");
+        contact1.setEmailAddress("johnsmith@gmail.com");
+        contact1.setPhoneNumber("1234567890");
+        contact1.setNotes("Fake notes.");
+        System.out.println(contact1);
+        
+        allContacts.addContact(contact1);
+        allContacts.getAllContacts();
+        allContacts.searchContacts("Smith");
+        allContacts.saveToDisk();
+        System.exit(0);
     }
 }
+
+/*
+Last name: Smith
+First name: John
+Street address: 235 Fake Rd., Palo Alto
+Email: johnsmith@gmail.com
+Phone: 1234567890
+Notes: Fake notes.
+*/
