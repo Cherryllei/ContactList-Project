@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * One object of class ContactList stores the entire contact list, retrieves a
- * contact via a user-inputted last name, save, and exit the file on disk.
+ * One object of class ContactList represents a whole list of Contacts
  * 
  * @author Chunlei Li
  */
@@ -15,42 +14,47 @@ public class ContactList {
     private List<Contact> contacts = new ArrayList<>();
 
     /**
-     * add a user
+     * Constructor that loads the contact list from disk
+     * 
+     * @author CL
      */
-    public void addContact(Contact user) {
-        contacts.add(user);
+    public ContactList() {
+
     }
 
     /**
-     * Print the contact list, sorted by name. If contacts have identical last
-     * names, then those contacts are alphabetized by first name
+     * Add a new contact to the contact list
+     * 
+     * @author CL
      */
-    public void printContactList() {
-        return;
+    public void addContact(Contact newContact) {
+        contacts.add(newContact);
     }
 
     /**
-     * Retrieve a person's information by last name If no match name then will
-     * print "no result" If more than one match the last name, then show all of
-     * the information.
+     * Returns all contacts in the contact list
+     * 
+     * @author CL
      */
-    public Contact getContact(String lastName) {
+    public Contact getAllContacts() {
         return null;
     }
 
     /**
-     * Quit the program and save to disk.
+     * Returns any contact whose last name matches lastName
+     * 
+     * @author CL
      */
-    public void saveToDisk() {
-        return;
+    public Contact searchContacts(String lastName) {
+        return null;
     }
 
     /**
-     * Start the program and open existing data file on disk. If no contact list
-     * data then start new one. A contact list in memory containing any contacts
-     * that were entered previously.
+     * Save to disk
+     * 
+     * @author CL
      */
-    public void openFile() {
+    public void saveToDisk() {
         return;
     }
 }
