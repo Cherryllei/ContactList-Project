@@ -1,8 +1,8 @@
 package FinalProject;
 
 /**
- * One object of class Contact stores the first and last name, street address, email address, phone number, and any
- * memos for each contact.
+ * One object of class Contact stores the first and last name, street address,
+ * email address, phone number, and any memos for each contact.
  * 
  * @author Chunlei Li
  */

@@ -4,8 +4,10 @@ import FinalProject.Contact;
 import FinalProject.ContactList;
 
 /**
- *  This class TestContactList by adding user’s personal information. This class also, adds new contacts, 
- *  prints a complete list of all contacts,  retrieve contacts by last name, save and open the data file from disk.
+ * This class TestContactList by adding user’s personal information. This class
+ * also, adds new contacts, prints a complete list of all contacts, retrieve
+ * contacts by last name, save and open the data file from disk.
+ * 
  * @author Chunlei Li
  */
 public class TestContactList {
