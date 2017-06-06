@@ -16,30 +16,12 @@ public class Contact {
 	private String notes;
 
 	/**
-	 * Gets first name of the contact
-	 * 
-	 * @author CL
-	 */
-	public String getFirstName() {
-		return firstName;
-	}
-
-	/**
 	 * Sets the value of firstName to "newFirstName"
 	 * 
 	 * @author CL
 	 */
 	public void setFirstName(String newFirstName) {
 		firstName = newFirstName;
-	}
-
-	/**
-	 * Gets last name of the contact
-	 * 
-	 * @author CL
-	 */
-	public String getLastName() {
-		return lastName;
 	}
 
 	/**
@@ -52,30 +34,12 @@ public class Contact {
 	}
 
 	/**
-	 * Gets street address of the contact
-	 * 
-	 * @author CL
-	 */
-	public String getStreetAddress() {
-		return streetAddress;
-	}
-
-	/**
 	 * Sets the value of streetAddress to "newStreetAddress"
 	 * 
 	 * @author CL
 	 */
 	public void setStreetAddress(String newStreetAddress) {
 		streetAddress = newStreetAddress;
-	}
-
-	/**
-	 * Gets email address of the contact
-	 * 
-	 * @author CL
-	 */
-	public String getEmailAddress() {
-		return emailAddress;
 	}
 
 	/**
@@ -88,15 +52,6 @@ public class Contact {
 	}
 
 	/**
-	 * Gets phone number of the contact
-	 * 
-	 * @author CL
-	 */
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-
-	/**
 	 * Sets the value of phoneNumber to "newPhoneNumber"
 	 * 
 	 * @author CL
@@ -106,20 +61,22 @@ public class Contact {
 	}
 
 	/**
-	 * Gets notes of the contact
-	 * 
-	 * @author CL
-	 */
-	public String getNotes() {
-		return notes;
-	}
-
-	/**
 	 * Sets the value of notes to "newNotes"
 	 * 
 	 * @author CL
 	 */
 	public void setNotes(String newNotes) {
 		notes = newNotes;
+	}
+
+	public String toString() {
+		String returnString;
+		returnString = "Last name: " + lastName + "\n";
+		returnString += "First name: " + firstName + "\n";
+		returnString += "Street address: " + streetAddress + "\n";
+		returnString += "Email: " + emailAddress + "\n";
+		returnString += "Phone: " + phoneNumber + "\n";
+		returnString += "Notes: " + notes + "\n";
+		return returnString;
 	}
 }
