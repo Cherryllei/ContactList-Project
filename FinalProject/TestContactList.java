@@ -4,8 +4,8 @@ import FinalProject.Contact;
 import FinalProject.ContactList;
 
 /**
- * Creates an object of ContactList and an object of Contact, and 
- * calls all methods on them.
+ * Creates an object of ContactList and an object of Contact, and calls all
+ * methods on them.
  * 
  * @author Chunlei Li
  */
@@ -13,7 +13,9 @@ public class TestContactList {
     public static void main(String[] args) {
         ContactList allContacts = new ContactList();
         Contact contact1 = new Contact();
-        
+
+        allContacts.openDisk();
+
         contact1.setLastName("Smith");
         contact1.setFirstName("John");
         contact1.setStreetAddress("235 Fake Rd., Palo Alto");
@@ -21,7 +23,7 @@ public class TestContactList {
         contact1.setPhoneNumber("1234567890");
         contact1.setNotes("Fake notes.");
         System.out.println(contact1);
-        
+
         allContacts.addContact(contact1);
         allContacts.getAllContacts();
         allContacts.searchContacts("Smith");
@@ -37,4 +39,4 @@ Street address: 235 Fake Rd., Palo Alto
 Email: johnsmith@gmail.com
 Phone: 1234567890
 Notes: Fake notes.
-*/
+ */
