@@ -1,6 +1,7 @@
 package FinalProject;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -37,8 +38,8 @@ public class ContactList {
      * 
      * @author CL
      */
-    public Contact getAllContacts() {
-        return null;// return the whole contact list instead of one contact
+    public List<Contact> getAllContacts() {
+        return contacts;
     }
 
     /**
@@ -46,8 +47,8 @@ public class ContactList {
      * 
      * @author CL
      */
-    public Contact searchContacts(String lastName) {
-        return null;// return an array
+    public List<Contact> searchContacts(String lastName) {
+        return Collections.emptyList();
     }
 
     /**
