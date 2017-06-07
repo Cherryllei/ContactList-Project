@@ -14,12 +14,13 @@ public class ContactList {
     private List<Contact> contacts = new ArrayList<>();
 
     /**
-     * Constructor that loads the contact list from disk
+     * Load the contact list from the disk if the file doesn't exist, create an
+     * empty file
      * 
      * @author CL
      */
-    public ContactList() {
-
+    public void openDisk() {
+        return;
     }
 
     /**
@@ -37,7 +38,7 @@ public class ContactList {
      * @author CL
      */
     public Contact getAllContacts() {
-        return null;
+        return null;// return the whole contact list instead of one contact
     }
 
     /**
@@ -46,7 +47,7 @@ public class ContactList {
      * @author CL
      */
     public Contact searchContacts(String lastName) {
-        return null;
+        return null;// return an array
     }
 
     /**
