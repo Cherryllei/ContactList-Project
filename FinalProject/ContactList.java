@@ -15,13 +15,13 @@ public class ContactList {
     private List<Contact> contacts = new ArrayList<>();
 
     /**
-     * Load the contact list from the disk if the file doesn't exist, create an
-     * empty file
+     * Load contact list from disk
+     * If there's no contact list file, create a new one
      * 
      * @author CL
      */
-    public void openDisk() {
-        return;
+    public void loadContactList() {
+        
     }
 
     /**
@@ -52,11 +52,15 @@ public class ContactList {
     }
 
     /**
-     * Save to disk
+     * Save contact list to disk
      * 
      * @author CL
      */
-    public void saveToDisk() {
+    public void saveContactList() {
         return;
+    }
+
+    public String toString() {
+        return contacts.toString();
     }
 }
