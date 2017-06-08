@@ -11,56 +11,56 @@ import java.util.List;
  */
 
 public class ContactList {
-    // Initialize an empty list to store contacts.
-    private List<Contact> contacts = new ArrayList<>();
+	// Initialize an empty list to store contacts.
+	private List<Contact> contacts = new ArrayList<>();
 
-    /**
-     * Load contact list from disk
-     * If there's no contact list file, create a new one
-     * 
-     * @author CL
-     */
-    public void loadContactList() {
-        
-    }
+	/**
+	 * Load contact list from disk If there's no contact list file, create a new
+	 * one
+	 * 
+	 * @author CL
+	 */
+	public void loadContactList() {
 
-    /**
-     * Add a new contact to the contact list
-     * 
-     * @author CL
-     */
-    public void addContact(Contact newContact) {
-        contacts.add(newContact);
-    }
+	}
 
-    /**
-     * Returns all contacts in the contact list
-     * 
-     * @author CL
-     */
-    public List<Contact> getAllContacts() {
-        return contacts;
-    }
+	/**
+	 * Add a new contact to the contact list
+	 * 
+	 * @author CL
+	 */
+	public void addContact(Contact newContact) {
+		contacts.add(newContact);
+	}
 
-    /**
-     * Returns any contact whose last name matches lastName
-     * 
-     * @author CL
-     */
-    public List<Contact> searchContacts(String lastName) {
-        return Collections.emptyList();
-    }
+	/**
+	 * Returns all contacts in the contact list
+	 * 
+	 * @author CL
+	 */
+	public List<Contact> getAllContacts() {
+		return contacts;
+	}
 
-    /**
-     * Save contact list to disk
-     * 
-     * @author CL
-     */
-    public void saveContactList() {
-        return;
-    }
+	/**
+	 * Returns any contact whose last name matches lastName
+	 * 
+	 * @author CL
+	 */
+	public List<Contact> searchContacts(String lastName) {
+		return Collections.emptyList();
+	}
 
-    public String toString() {
-        return contacts.toString();
-    }
+	/**
+	 * Save contact list to disk
+	 * 
+	 * @author CL
+	 */
+	public void saveContactList() {
+		return;
+	}
+
+	public String toString() {
+		return contacts.toString();
+	}
 }
