@@ -12,7 +12,7 @@ import java.util.List;
 
 public class ContactList {
 	// Initialize an empty list to store contacts.
-	private List<Contact> contacts = new ArrayList<>();
+	private List<Contact> contacts = new ArrayList<Contact>();
 
 	/**
 	 * Load contact list from disk If there's no contact list file, create a new
@@ -34,15 +34,6 @@ public class ContactList {
 	}
 
 	/**
-	 * Returns all contacts in the contact list
-	 * 
-	 * @author CL
-	 */
-	public List<Contact> getAllContacts() {
-		return contacts;
-	}
-
-	/**
 	 * Returns any contact whose last name matches lastName
 	 * 
 	 * @author CL
@@ -59,7 +50,12 @@ public class ContactList {
 	public void saveContactList() {
 		return;
 	}
-
+	
+	/**
+	 * Returns a string with all the contacts from the contact list
+	 * 
+	 * @author JD
+	 */
 	public String toString() {
 		return contacts.toString();
 	}
