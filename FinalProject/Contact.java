@@ -16,7 +16,7 @@ public class Contact {
     private String notes;
 
     /**
-     * Sets the value of firstName to "newFirstName"
+     * Sets the value of firstName to "newFirstname"
      * 
      * @author CL
      */
@@ -61,7 +61,7 @@ public class Contact {
     }
 
     /**
-     * Sets the value of notes to "newNotes"
+     * Sets the value notes to "newNotes"
      * 
      * @author CL
      */
@@ -77,7 +77,6 @@ public class Contact {
         returnString += "Email: " + emailAddress + "\n";
         returnString += "Phone: " + phoneNumber + "\n";
         returnString += "Notes: " + notes + "\n";
-        return returnString; 
+        return returnString;
     }
 }
-
