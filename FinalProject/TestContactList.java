@@ -34,7 +34,6 @@ public class TestContactList {
 		System.out.println(contact2);
 		allContacts.addContact(contact2);
 
-		System.out.println("Print all contacts: " + allContacts.getAllContacts() + "\n");
 		System.out.println("Search last name Smith:" + allContacts.searchContacts("Smith"));
 		System.out.println("Search last name Taylor:" + allContacts.searchContacts("Taylor") + "\n");
 		System.out.println(allContacts);
@@ -44,19 +43,35 @@ public class TestContactList {
 }
 
 /*
- * Last name: Smith First name: John Street address: 235 Fake Rd., Palo Alto
- * Email: johnsmith@gmail.com Phone: 1234567890 Notes: Fake notes.
- * 
- * Last name: Taylor First name: Anna Street address: Email: Phone: Notes:
- * 
- * Print all contacts: [Last name: Smith First name: John Street address: 235
- * Fake Rd., Palo Alto Email: johnsmith@gmail.com Phone: 1234567890 Notes: Fake
- * notes. , Last name: Taylor First name: Anna Street address: Email: Phone:
- * Notes: ]
- * 
- * Search last name Smith:[] Search last name Taylor:[]
- * 
- * [Last name: Smith First name: John Street address: 235 Fake Rd., Palo Alto
- * Email: johnsmith@gmail.com Phone: 1234567890 Notes: Fake notes. , Last name:
- * Taylor First name: Anna Street address: Email: Phone: Notes: ]
+ Last name: Smith
+First name: John
+Street address: 235 Fake Rd., Palo Alto
+Email: johnsmith@gmail.com
+Phone: 1234567890
+Notes: Fake notes.
+
+Last name: Taylor
+First name: Anna
+Street address: 
+Email: 
+Phone: 
+Notes: 
+
+Search last name Smith:[]
+Search last name Taylor:[]
+
+[Last name: Smith
+First name: John
+Street address: 235 Fake Rd., Palo Alto
+Email: johnsmith@gmail.com
+Phone: 1234567890
+Notes: Fake notes.
+, Last name: Taylor
+First name: Anna
+Street address: 
+Email: 
+Phone: 
+Notes: 
+]
+
  */
