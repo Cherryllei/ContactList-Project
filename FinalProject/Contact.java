@@ -16,7 +16,7 @@ public class Contact {
 	private String notes;
 
 	/**
-	 * Sets the value of firstName to "newFirstname"
+	 * Sets the value of firstName to "newFirstName"
 	 * 
 	 * @author CL
 	 */
