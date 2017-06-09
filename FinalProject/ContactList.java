@@ -59,15 +59,4 @@ public class ContactList {
 	public String toString() {
 		return contacts.toString();
 	}
-
-	/**
-	 * Sort contact list by last name
-	 * 
-	 * @author CL
-	 */
-	// public void compareTo(otherPerson){
-	// Returns <0 when person<otherPerson
-	// Returns >0 when person>otherPerson
-	// Returns ==0 when person==otherPerson
-	// }
 }
