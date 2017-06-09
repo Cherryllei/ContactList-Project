@@ -16,7 +16,7 @@
 //		while (true) {
 //			System.out.println(
 //					"Welcome to The Contact List's main menu. What would you like to do? ");
-//			System.out.println("[1]Add contact" + "\n" + "[2]View all contacts"
+//			System.out.println("[1]Add contact" + "\n" + "[2]View all contacts" 
 //					+ "\n" + "[3]Search contacts by last name" + "\n"
 //					+ "[4]Quit");
 //			Scanner console = new Scanner(System.in);
