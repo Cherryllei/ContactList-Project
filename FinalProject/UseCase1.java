@@ -5,6 +5,7 @@ import java.util.Scanner;
 /**
  * Creates an object of ContactList and two objects of Contact. After each Contact
  * is created, the ContactList is printed.
+ * 
  * @author Chunlei Li
  */
 public class UseCase1 {
