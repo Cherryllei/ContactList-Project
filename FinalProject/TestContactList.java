@@ -49,17 +49,14 @@ Street address: 235 Fake Rd., Palo Alto
 Email: johnsmith@gmail.com
 Phone: 1234567890
 Notes: Fake notes.
-
 Last name: Taylor
 First name: Anna
 Street address: 
 Email: 
 Phone: 
 Notes: 
-
 Search last name Smith:[]
 Search last name Taylor:[]
-
 [Last name: Smith
 First name: John
 Street address: 235 Fake Rd., Palo Alto
@@ -73,5 +70,4 @@ Email:
 Phone: 
 Notes: 
 ]
-
  */
