@@ -1,5 +1,7 @@
 package FinalProject;
 
+import java.util.Scanner;
+
 /**
  * One object of class Contact stores the first and last name, street address,
  * email address, phone number, and any notes for one contact.
@@ -16,57 +18,32 @@ public class Contact {
 	private String notes;
 
 	/**
-	 * Sets the value of firstName to "newFirstName"
-	 * 
-	 * @author CL
+	 * get info of the user
 	 */
-	public void setFirstName(String newFirstName) {
-		firstName = newFirstName;
-	}
+	public void read() {
+		Scanner console = new Scanner(System.in);
+		System.out.println("Please enter your first name: ");
+		firstName = console.nextLine();
+		System.out.println("Please enter your last name: ");
 
-	/**
-	 * Sets the value of lastName to "newLastName"
-	 * 
-	 * @author CL
-	 */
-	public void setLastName(String newLastName) {
-		lastName = newLastName;
-	}
-
-	/**
-	 * Sets the value of streetAddress to "newStreetAddress"
-	 * 
-	 * @author CL
-	 */
-	public void setStreetAddress(String newStreetAddress) {
-		streetAddress = newStreetAddress;
-	}
-
-	/**
-	 * Sets the value of emailAddress to "newEmailAddress"
-	 * 
-	 * @author CL
-	 */
-	public void setEmailAddress(String newEmailAddress) {
-		emailAddress = newEmailAddress;
-	}
-
-	/**
-	 * Sets the value of phoneNumber to "newPhoneNumber"
-	 * 
-	 * @author CL
-	 */
-	public void setPhoneNumber(String newPhoneNumber) {
-		phoneNumber = newPhoneNumber;
-	}
-
-	/**
-	 * Sets the value notes to "newNotes"
-	 * 
-	 * @author CL
-	 */
-	public void setNotes(String newNotes) {
-		notes = newNotes;
+		boolean invalidLastName = true;
+		while (invalidLastName) {
+			lastName = console.nextLine();
+			if (lastName.trim().length() <= 0) {
+				System.out.println(
+						"Last name can not be empty, please enter again.");
+			} else {
+				invalidLastName = false;
+			}
+		}
+		System.out.println("Please enter your street address: ");
+		streetAddress = console.nextLine();
+		System.out.println("Please enter your email address: ");
+		emailAddress = console.nextLine();
+		System.out.println("Please enter your phone number: ");
+		phoneNumber = console.nextLine();
+		System.out.println("Please enter your notes: ");
+		notes = console.nextLine();
 	}
 
 	public String toString() {
