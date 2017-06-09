@@ -3,9 +3,8 @@ package FinalProject;
 import java.util.Scanner;
 
 /**
- * Creates an object of ContactList and an object of Contact, and calls all
- * methods on them.
- * 
+ * Creates an object of ContactList and two objects of Contact. After each Contact
+ * is created, the ContactList is printed.
  * @author Chunlei Li
  */
 public class UseCase1 {
