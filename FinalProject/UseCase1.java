@@ -16,6 +16,7 @@ public class UseCase1 {
         Contact contact1 = new Contact();
         boolean invalidLastName = true;
         while (invalidLastName) {
+        	String lastName;
             lastName = console.nextLine();
              System.out.println("Please type last name (required): \n > ");
              if (lastName.trim().length() <= 0) {
@@ -49,6 +50,7 @@ public class UseCase1 {
         Contact contact2 = new Contact();
         invalidLastName = true;
         while (invalidLastName) {
+        	String lastName;
             lastName = console.nextLine();
              System.out.println("Please type last name (required): \n > ");
              if (lastName.trim().length() <= 0) {
@@ -62,7 +64,7 @@ public class UseCase1 {
         contact2.setFirstName(console.nextLine());
         
         System.out.println("Please enter your street address: \n > ");
-        contact22.setStreetAddress(console.nextLine());
+        contact2.setStreetAddress(console.nextLine());
         
         System.out.println("Please enter your email address: \n > ");
         contact2.setEmailAddress(console.nextLine());
