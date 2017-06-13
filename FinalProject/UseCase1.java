@@ -3,10 +3,10 @@ package FinalProject;
 import java.util.Scanner;
 
 /**
- * Creates an object of ContactList and two objects of Contact. After each
- * Contact is created, the ContactList is printed.
+ * Creates an object of ContactList. Loops three times to test empty last name and the
+ * creation of two Contacts. After each Contact is created, the ContactList is printed
  * 
- * @author Chunlei Li
+ * @author JD
  */
 public class UseCase1 {
 	public static void main(String[] args) {
@@ -14,36 +14,47 @@ public class UseCase1 {
 		Scanner console = new Scanner(System.in);
 
 		for (int i = 0; i < 3; i++) {
-			Contact contact = new Contact();
-			String lastName;
 			System.out.print("Please type last name (required): \n" + "> ");
+			String lastName;
 			lastName = console.nextLine();
 			if (lastName.trim().length() <= 0) {
 				System.out.println("\n" + "Last name is required. \n");
+				System.out.println(allContacts + "\n");
 			} else {
-				contact.setLastName(lastName);
-
-				System.out.print("Please type a first name: \n" + "> ");
-				contact.setFirstName(console.nextLine());
-
-				System.out.print("Please type a street address: \n" + "> ");
-				contact.setStreetAddress(console.nextLine());
-
-				System.out.print("Please type an email: \n" + "> ");
-				contact.setEmailAddress(console.nextLine());
-
-				System.out.print("Please type a phone number: \n" + "> ");
-				contact.setPhoneNumber(console.nextLine());
-
-				System.out.print("If you’d like to add some notes, please type them: \n" + "> ");
-				contact.setNotes(console.nextLine());
-
+				Contact contact = promptUser(console, lastName);
 				allContacts.addContact(contact);
 
 				System.out.println("\n" + "Contact saved!" + "\n");
 				System.out.println(allContacts + "\n");
 			}
 		}
+	}
+	
+	/**
+	 * Prompts the user for the information needed to create the contact
+	 * 
+	 * @author JD
+	 */
+	
+	public static Contact promptUser(Scanner console, String lastName) {
+		Contact contact = new Contact();
+		contact.setLastName(lastName);
+	
+		System.out.print("Please type a first name: \n" + "> ");
+		contact.setFirstName(console.nextLine());
+	
+		System.out.print("Please type a street address: \n" + "> ");
+		contact.setStreetAddress(console.nextLine());
+	
+		System.out.print("Please type an email: \n" + "> ");
+		contact.setEmailAddress(console.nextLine());
+	
+		System.out.print("Please type a phone number: \n" + "> ");
+		contact.setPhoneNumber(console.nextLine());
+	
+		System.out.print("If you’d like to add some notes, please type them: \n" + "> ");
+		contact.setNotes(console.nextLine());
+		return contact;
 	}
 }
 
@@ -52,6 +63,8 @@ Please type last name (required):
 > 
 
 Last name is required. 
+
+[]
 
 Please type last name (required): 
 > Smith
