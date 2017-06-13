@@ -42,7 +42,7 @@ public class ContactList {
 		List<Contact> searchResults = new ArrayList<Contact>();
 		for (Contact temp : contacts) {
 			String compareContact = temp.getLastName();
-			if (compareContact.equalsIgnoreCase(lastName.toLowerCase())){
+			if (compareContact.equalsIgnoreCase(lastName)){
 				searchResults.add(temp);
 			}
 		}
