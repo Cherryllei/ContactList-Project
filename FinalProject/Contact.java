@@ -69,6 +69,13 @@ public class Contact {
 		notes = newNotes;
 	}
 
+	/**
+	 * Returns a string containing the last name, first name, street address,
+	 * email, phone number and notes of the Contact
+	 * 
+	 * @author JD
+	 */
+	
 	public String toString() {
 		String returnString;
 		returnString = "Last name: " + lastName + "\n";
@@ -78,5 +85,16 @@ public class Contact {
 		returnString += "Phone: " + phoneNumber + "\n";
 		returnString += "Notes: " + notes + "\n";
 		return returnString;
+	}
+	
+	/**
+	 * Sorts the contacts by lastName. If the lastName is equal, 
+	 * sorts the contacts by firstName.
+	 * 
+	 * @author JD
+	 */
+	
+	public int compareTo(Contact c1){
+		return 0;
 	}
 }
