@@ -47,7 +47,7 @@ public class ContactList {
 			}
 		}
 		
-		Collections.sort(searchResults);
+		//Collections.sort(searchResults);
 		return searchResults;
 	}
 

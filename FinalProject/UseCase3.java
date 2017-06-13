@@ -14,6 +14,17 @@ public class UseCase3 {
 		ContactList allContacts = new ContactList();
 		allContacts.loadContactList();
 
+		Contact contact1 = new Contact();
+		contact1.setLastName("Smith");
+		contact1.setFirstName("John");
+		contact1.setStreetAddress("235 Fake Rd., Palo Alto");
+		contact1.setEmailAddress("johnsmith@gmail.com");
+		contact1.setPhoneNumber("1234567890");
+		contact1.setNotes("Fake notes.");
+		System.out.println(contact1);
+		allContacts.addContact(contact1);
+		System.out.println(allContacts + "\n");
+
 		Contact contact2 = new Contact();
 		contact2.setLastName("Taylor");
 		contact2.setFirstName("Anna");
@@ -35,24 +46,13 @@ public class UseCase3 {
 		System.out.println(contact3);
 		allContacts.addContact(contact3);
 		System.out.println(allContacts + "\n");
-
-		Contact contact1 = new Contact();
-		contact1.setLastName("Smith");
-		contact1.setFirstName("John");
-		contact1.setStreetAddress("235 Fake Rd., Palo Alto");
-		contact1.setEmailAddress("johnsmith@gmail.com");
-		contact1.setPhoneNumber("1234567890");
-		contact1.setNotes("Fake notes.");
-		System.out.println(contact1);
-		allContacts.addContact(contact1);
-		System.out.println(allContacts + "\n");
 		
 		System.out.print("Search last name Smith: \n");
 		List<Contact> search1 = allContacts.searchContacts("Smith");
 		if (search1.size() > 0) {
 			System.out.println(search1 + "\n");
 		} else {
-			System.out.println("No results\n");
+			System.out.println("There’s no contact with that last name.\n");
 		}
 		
 		System.out.print("Search last name smith: \n");
@@ -60,7 +60,7 @@ public class UseCase3 {
 		if (search2.size() > 0) {
 			System.out.println(search2 + "\n");
 		} else {
-			System.out.println("No results\n");
+			System.out.println("There’s no contact with that last name.\n");
 		}
 		
 		System.out.print("Search last name ssmith: \n");
@@ -68,7 +68,7 @@ public class UseCase3 {
 		if (search3.size() > 0) {
 			System.out.println(search3 + "\n");
 		} else {
-			System.out.println("No results\n");
+			System.out.println("There’s no contact with that last name.\n");
 		}
 		
 		System.out.print("Search last name Taylor: \n");
@@ -76,7 +76,7 @@ public class UseCase3 {
 		if (search4.size() > 0) {
 			System.out.println(search4 + "\n");
 		} else {
-			System.out.println("No results\n");
+			System.out.println("There’s no contact with that last name.\n");
 		}
 		
 		System.out.print("Search last name TaYlOr: \n");
@@ -84,14 +84,27 @@ public class UseCase3 {
 		if (search5.size() > 0) {
 			System.out.println(search5 + "\n");
 		} else {
-			System.out.println("No results\n");
+			System.out.println("There’s no contact with that last name.\n");
 		}
-		
-		System.out.println(allContacts + "\n");
 	}
 }
 
 /*
+Last name: Smith
+First name: John
+Street address: 235 Fake Rd., Palo Alto
+Email: johnsmith@gmail.com
+Phone: 1234567890
+Notes: Fake notes.
+
+[Last name: Smith
+First name: John
+Street address: 235 Fake Rd., Palo Alto
+Email: johnsmith@gmail.com
+Phone: 1234567890
+Notes: Fake notes.
+]
+
 Last name: Taylor
 First name: Anna
 Street address: 
@@ -99,7 +112,13 @@ Email:
 Phone: 
 Notes: 
 
-[Last name: Taylor
+[Last name: Smith
+First name: John
+Street address: 235 Fake Rd., Palo Alto
+Email: johnsmith@gmail.com
+Phone: 1234567890
+Notes: Fake notes.
+, Last name: Taylor
 First name: Anna
 Street address: 
 Email: 
@@ -114,7 +133,13 @@ Email:
 Phone: 
 Notes: 
 
-[Last name: Taylor
+[Last name: Smith
+First name: John
+Street address: 235 Fake Rd., Palo Alto
+Email: johnsmith@gmail.com
+Phone: 1234567890
+Notes: Fake notes.
+, Last name: Taylor
 First name: Anna
 Street address: 
 Email: 
@@ -126,33 +151,6 @@ Street address:
 Email: 
 Phone: 
 Notes: 
-]
-
-Last name: Smith
-First name: John
-Street address: 235 Fake Rd., Palo Alto
-Email: johnsmith@gmail.com
-Phone: 1234567890
-Notes: Fake notes.
-
-[Last name: Taylor
-First name: Anna
-Street address: 
-Email: 
-Phone: 
-Notes: 
-, Last name: Smith
-First name: Sophia
-Street address: 
-Email: 
-Phone: 
-Notes: 
-, Last name: Smith
-First name: John
-Street address: 235 Fake Rd., Palo Alto
-Email: johnsmith@gmail.com
-Phone: 1234567890
-Notes: Fake notes.
 ]
 
 Search last name Smith: 
@@ -186,7 +184,7 @@ Notes:
 ]
 
 Search last name ssmith: 
-No results
+There’s no contact with that last name.
 
 Search last name Taylor: 
 [Last name: Taylor
@@ -204,25 +202,5 @@ Street address:
 Email: 
 Phone: 
 Notes: 
-]
-
-[Last name: Taylor
-First name: Anna
-Street address: 
-Email: 
-Phone: 
-Notes: 
-, Last name: Smith
-First name: Sophia
-Street address: 
-Email: 
-Phone: 
-Notes: 
-, Last name: Smith
-First name: John
-Street address: 235 Fake Rd., Palo Alto
-Email: johnsmith@gmail.com
-Phone: 1234567890
-Notes: Fake notes.
 ]
 */
