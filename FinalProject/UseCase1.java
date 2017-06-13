@@ -8,83 +8,50 @@ import java.util.Scanner;
  * @author Chunlei Li
  */
 public class UseCase1 {
-	public static void main(String[] args) {
-		ContactList allContacts = new ContactList();
-		Scanner console = new Scanner(System.in);
+    public static void main(String[] args) {
+        ContactList allContacts = new ContactList();
+        Scanner console = new Scanner(System.in);
 
-		Contact contact1 = new Contact();
-		boolean invalidLastName = true;
-		String lastName;
-		while (invalidLastName) {
-			System.out.print("Please type last name (required): \n" + "> ");
-			lastName = console.nextLine();
-			if (lastName.trim().length() <= 0) {
-				System.out.println("\n" + "Last name is required. ");
-			} else {
-				contact1.setLastName(lastName);
-				invalidLastName = false;
-			}
-		}
-		System.out.print("Please type a first name: \n" + "> ");
-		contact1.setFirstName(console.nextLine());
-
-		System.out.print("Please type a street address: \n" + "> ");
-		contact1.setStreetAddress(console.nextLine());
-
-		System.out.print("Please type an email: \n" + "> ");
-		contact1.setEmailAddress(console.nextLine());
-
-		System.out.print("Please type a phone number: \n" + "> ");
-		contact1.setPhoneNumber(console.nextLine());
-
-		System.out.print("If you’d like to add some notes, please type them: \n" + "> ");
-		contact1.setNotes(console.nextLine());
-
-		allContacts.addContact(contact1);
-
-		System.out.println("\n" + "Contact saved!" + "\n");
-		System.out.println(allContacts + "\n");
-
-		Contact contact2 = new Contact();
-		invalidLastName = true;
-		lastName = "";
-		while (invalidLastName) {
-			System.out.print("Please type last name (required): \n" + "> ");
-			lastName = console.nextLine();
-			if (lastName.trim().length() <= 0) {
-				System.out.println("Last name is required. ");
-			} else {
-				contact2.setLastName(lastName);
-				invalidLastName = false;
-			}
-		}
-		System.out.print("Please type a first name: \n" + "> ");
-		contact2.setFirstName(console.nextLine());
-
-		System.out.print("Please type a street address: \n" + "> ");
-		contact2.setStreetAddress(console.nextLine());
-
-		System.out.print("Please type an email: \n" + "> ");
-		contact2.setEmailAddress(console.nextLine());
-
-		System.out.print("Please type a phone number: \n" + "> ");
-		contact2.setPhoneNumber(console.nextLine());
-
-		System.out.print("If you’d like to add some notes, please type them: \n" + "> ");
-		contact2.setNotes(console.nextLine());
-
-		allContacts.addContact(contact2);
-
-		System.out.println("\n" + "Contact saved!" + "\n");
-		System.out.println(allContacts + "\n");
-
-	}
+        for (int i = 0; i < 3; i++){
+            Contact contact = new Contact();
+            String lastName;
+            System.out.print("Please type last name (required): \n" + "> ");
+            lastName = console.nextLine();
+            if (lastName.trim().length() <= 0) {
+                System.out.println("\n" + "Last name is required. \n");
+            } else {
+                contact.setLastName(lastName);
+                
+                System.out.print("Please type a first name: \n" + "> ");
+                contact.setFirstName(console.nextLine());
+        
+                System.out.print("Please type a street address: \n" + "> ");
+                contact.setStreetAddress(console.nextLine());
+        
+                System.out.print("Please type an email: \n" + "> ");
+                contact.setEmailAddress(console.nextLine());
+        
+                System.out.print("Please type a phone number: \n" + "> ");
+                contact.setPhoneNumber(console.nextLine());
+        
+                System.out.print("If you’d like to add some notes, please type them: \n" + "> ");
+                contact.setNotes(console.nextLine());
+        
+                allContacts.addContact(contact);
+    
+                System.out.println("\n" + "Contact saved!" + "\n");
+                System.out.println(allContacts + "\n");
+            }
+        }
+    }
 }
+
 /*
 Please type last name (required): 
 > 
 
 Last name is required. 
+
 Please type last name (required): 
 > Smith
 Please type a first name: 
@@ -136,6 +103,5 @@ Email:
 Phone: 
 Notes: 
 ]
-
 
 */
