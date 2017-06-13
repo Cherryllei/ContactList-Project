@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * One object of class ContactList represents a whole list of Contacts
- * 
+ *  
  * @author Chunlei Li
  */
 
