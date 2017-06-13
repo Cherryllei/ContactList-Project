@@ -7,7 +7,7 @@ package FinalProject;
  * @author Chunlei Li
  */
 
-public class Contact {
+public class Contact implements Comparable<Contact> {
 	private String firstName;
 	private String lastName;
 	private String streetAddress;
@@ -25,12 +25,30 @@ public class Contact {
 	}
 
 	/**
+	 * Gets the value of firstName
+	 * 
+	 * @author JD
+	 */
+	public String getFirstName() {
+		return firstName;
+	}
+
+	/**
 	 * Sets the value of lastName to "newLastName"
 	 * 
 	 * @author CL
 	 */
 	public void setLastName(String newLastName) {
 		lastName = newLastName;
+	}
+
+	/**
+	 * Gets the value of lastName
+	 * 
+	 * @author JD
+	 */
+	public String getLastName() {
+		return lastName;
 	}
 
 	/**
@@ -69,6 +87,12 @@ public class Contact {
 		notes = newNotes;
 	}
 
+	/**
+	 * Returns a string containing the last name, first name, street address,
+	 * email, phone number and notes of the Contact
+	 * 
+	 * @author JD
+	 */
 	public String toString() {
 		String returnString;
 		returnString = "Last name: " + lastName + "\n";
@@ -78,5 +102,22 @@ public class Contact {
 		returnString += "Phone: " + phoneNumber + "\n";
 		returnString += "Notes: " + notes + "\n";
 		return returnString;
+	}
+	
+	/**
+	 * Sorts the contacts by lastName. If the lastName is equal, 
+	 * sorts the contacts by firstName.
+	 * 
+	 * @author JD
+	 */
+	public int compareTo(Contact c1){
+		String newLastName = c1.getLastName();
+		int compareResult = lastName.compareTo(newLastName);
+	    if (compareResult == 0) {
+			String newFirstName = c1.getFirstName();
+			compareResult = firstName.compareTo(newFirstName);
+	    }
+	    
+	    return compareResult;
 	}
 }

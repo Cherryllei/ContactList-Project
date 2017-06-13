@@ -34,12 +34,21 @@ public class ContactList {
 	}
 
 	/**
-	 * Returns any contact whose last name matches lastName
+	 * Creates a new ArrayList with the search results and orders the list
 	 * 
 	 * @author CL
 	 */
 	public List<Contact> searchContacts(String lastName) {
-		return Collections.emptyList();
+		List<Contact> searchResults = new ArrayList<Contact>();
+		for (Contact temp : contacts) {
+			String compareContact = temp.getLastName();
+			if (compareContact.equalsIgnoreCase(lastName.toLowerCase())){
+				searchResults.add(temp);
+			}
+		}
+		
+		Collections.sort(searchResults);
+		return searchResults;
 	}
 
 	/**
