@@ -90,3 +90,139 @@ public class UseCase3 {
 		System.out.println(allContacts + "\n");
 	}
 }
+
+/*
+Last name: Taylor
+First name: Anna
+Street address: 
+Email: 
+Phone: 
+Notes: 
+
+[Last name: Taylor
+First name: Anna
+Street address: 
+Email: 
+Phone: 
+Notes: 
+]
+
+Last name: Smith
+First name: Sophia
+Street address: 
+Email: 
+Phone: 
+Notes: 
+
+[Last name: Taylor
+First name: Anna
+Street address: 
+Email: 
+Phone: 
+Notes: 
+, Last name: Smith
+First name: Sophia
+Street address: 
+Email: 
+Phone: 
+Notes: 
+]
+
+Last name: Smith
+First name: John
+Street address: 235 Fake Rd., Palo Alto
+Email: johnsmith@gmail.com
+Phone: 1234567890
+Notes: Fake notes.
+
+[Last name: Taylor
+First name: Anna
+Street address: 
+Email: 
+Phone: 
+Notes: 
+, Last name: Smith
+First name: Sophia
+Street address: 
+Email: 
+Phone: 
+Notes: 
+, Last name: Smith
+First name: John
+Street address: 235 Fake Rd., Palo Alto
+Email: johnsmith@gmail.com
+Phone: 1234567890
+Notes: Fake notes.
+]
+
+Search last name Smith: 
+[Last name: Smith
+First name: John
+Street address: 235 Fake Rd., Palo Alto
+Email: johnsmith@gmail.com
+Phone: 1234567890
+Notes: Fake notes.
+, Last name: Smith
+First name: Sophia
+Street address: 
+Email: 
+Phone: 
+Notes: 
+]
+
+Search last name smith: 
+[Last name: Smith
+First name: John
+Street address: 235 Fake Rd., Palo Alto
+Email: johnsmith@gmail.com
+Phone: 1234567890
+Notes: Fake notes.
+, Last name: Smith
+First name: Sophia
+Street address: 
+Email: 
+Phone: 
+Notes: 
+]
+
+Search last name ssmith: 
+No results
+
+Search last name Taylor: 
+[Last name: Taylor
+First name: Anna
+Street address: 
+Email: 
+Phone: 
+Notes: 
+]
+
+Search last name TaYlOr: 
+[Last name: Taylor
+First name: Anna
+Street address: 
+Email: 
+Phone: 
+Notes: 
+]
+
+[Last name: Taylor
+First name: Anna
+Street address: 
+Email: 
+Phone: 
+Notes: 
+, Last name: Smith
+First name: Sophia
+Street address: 
+Email: 
+Phone: 
+Notes: 
+, Last name: Smith
+First name: John
+Street address: 235 Fake Rd., Palo Alto
+Email: johnsmith@gmail.com
+Phone: 1234567890
+Notes: Fake notes.
+]
+*/
