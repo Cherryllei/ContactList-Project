@@ -1,7 +1,6 @@
 package FinalProject;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -11,7 +10,6 @@ import java.util.List;
  */
 
 public class ContactList {
-	// Initialize an empty list to store contacts.
 	private List<Contact> contacts = new ArrayList<Contact>();
 
 	/**
@@ -47,7 +45,7 @@ public class ContactList {
 			}
 		}
 		
-		//Collections.sort(searchResults);
+		//Collections.sort(searchResults); Leave this here for Erin to see, will delete before submitting
 		return searchResults;
 	}
 
