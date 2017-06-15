@@ -14,17 +14,17 @@ public class UseCase1 {
 		Scanner console = new Scanner(System.in);
 
 		for (int i = 0; i < 3; i++) {
-			System.out.print("Please type last name (required): \n" + "> ");
+			System.out.print("Please type last name (required): \n> ");
 			String lastName;
 			lastName = console.nextLine();
 			if (lastName.trim().length() <= 0) {
-				System.out.println("\n" + "Last name is required. \n");
+				System.out.println("\nLast name is required. \n");
 				System.out.println(allContacts + "\n");
 			} else {
 				Contact contact = promptUser(console, lastName);
 				allContacts.addContact(contact);
 
-				System.out.println("\n" + "Contact saved!" + "\n");
+				System.out.println("\nContact saved!\n");
 				System.out.println(allContacts + "\n");
 			}
 		}
@@ -40,19 +40,19 @@ public class UseCase1 {
 		Contact contact = new Contact();
 		contact.setLastName(lastName);
 	
-		System.out.print("Please type a first name: \n" + "> ");
+		System.out.print("Please type a first name: \n> ");
 		contact.setFirstName(console.nextLine());
 	
-		System.out.print("Please type a street address: \n" + "> ");
+		System.out.print("Please type a street address: \n> ");
 		contact.setStreetAddress(console.nextLine());
 	
-		System.out.print("Please type an email: \n" + "> ");
+		System.out.print("Please type an email: \n> ");
 		contact.setEmailAddress(console.nextLine());
 	
-		System.out.print("Please type a phone number: \n" + "> ");
+		System.out.print("Please type a phone number: \n> ");
 		contact.setPhoneNumber(console.nextLine());
 	
-		System.out.print("If you’d like to add some notes, please type them: \n" + "> ");
+		System.out.print("If you’d like to add some notes, please type them: \n> ");
 		contact.setNotes(console.nextLine());
 		return contact;
 	}
