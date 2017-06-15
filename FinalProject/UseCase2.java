@@ -1,7 +1,5 @@
 package FinalProject;
 
-import java.util.Scanner;
-
 /**
  * Creates an object of ContactList and three objects of Contact. After each
  * Contact is created, the ContactList is printed, sorted alphabetically by
