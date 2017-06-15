@@ -1,17 +1,17 @@
 package FinalProject;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Collections;
 import java.util.List;
 
 /**
  * One object of class ContactList represents a whole list of Contacts
- * 
+ *  
  * @author Chunlei Li
  */
 
 public class ContactList {
-	// Initialize an empty list to store contacts.
 	private List<Contact> contacts = new ArrayList<Contact>();
 
 	/**
@@ -34,14 +34,39 @@ public class ContactList {
 	}
 
 	/**
-	 * Returns any contact whose last name matches lastName
+	 * Creates a new ArrayList with the search results and orders the list
 	 * 
 	 * @author CL
 	 */
-	public List<Contact> searchContacts(String lastName) {
-		return Collections.emptyList();
+	/* public List<Contact> searchContacts(String lastName) {
+		List<Contact> searchResults = new ArrayList<Contact>();
+		for (Contact temp : contacts) {
+			String compareContact = temp.getLastName();
+			if (compareContact.equalsIgnoreCase(lastName)){
+				searchResults.add(temp);
+		return searchResults;
+			}
+		} */
+	
+	/**
+	 * Sorts Contact objects by lastName. If the lastNames are the same,
+	 * sorts Contact objects by firstName.
+	 * 
+	 * @author EL
+	 */
+	public List<Contact> orderedContactList = new ArrayList<Contact>();
+	
+	public void sortContacts() {
+		Collections.sort(contacts, new Comparator<Contact>() {
+			public int compare(Contact c1, Contact c2) {
+				int result = c1.getLastName().compareToIgnoreCase(c2.getLastName());
+				if (result != 0)
+					return result;
+				return c1.getFirstName().compareToIgnoreCase(c2.getFirstName());
+			}
+		});
 	}
-
+		
 	/**
 	 * Save contact list to disk
 	 * 

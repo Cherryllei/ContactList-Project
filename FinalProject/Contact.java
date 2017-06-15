@@ -1,5 +1,6 @@
 package FinalProject;
 
+
 /**
  * One object of class Contact stores the first and last name, street address,
  * email address, phone number, and any notes for one contact.
@@ -7,7 +8,7 @@ package FinalProject;
  * @author Chunlei Li
  */
 
-public class Contact {
+public class Contact /*implements Comparable<Contact>*/ {
 	private String firstName;
 	private String lastName;
 	private String streetAddress;
@@ -23,6 +24,15 @@ public class Contact {
 	public void setFirstName(String newFirstName) {
 		firstName = newFirstName;
 	}
+	
+	/**
+	 * Gets the value of firstName
+	 * 
+	 * @author JD
+	 */
+	public String getFirstName() {
+		return firstName;
+	}
 
 	/**
 	 * Sets the value of lastName to "newLastName"
@@ -31,6 +41,15 @@ public class Contact {
 	 */
 	public void setLastName(String newLastName) {
 		lastName = newLastName;
+	}
+	
+	/**
+	 * Gets the value of lastName
+	 * 
+	 * @author JD
+	 */
+	public String getLastName() {
+		return lastName;
 	}
 
 	/**
@@ -69,6 +88,13 @@ public class Contact {
 		notes = newNotes;
 	}
 
+	/**
+	 * Returns a formatted string containing the lastName, firstName,
+	 * streetAddress, emailAddress, phoneNumber, and notes of each
+	 * Contact object.
+	 * 
+	 * @author EL
+	 */
 	public String toString() {
 		String returnString;
 		returnString = "Last name: " + lastName + "\n";
@@ -79,4 +105,21 @@ public class Contact {
 		returnString += "Notes: " + notes + "\n";
 		return returnString;
 	}
+	
+	/**
+	 * Sorts the Contacts by lastName. If the lastNames are the same,
+	 * sorts Contacts by firstName.
+	 * 
+	 * @author JD
+	 */
+//	public int compareTo(Contact c1) {
+//		String newLastName = c1.getLastName();
+//		int compareResult = lastName.compareTo(newLastName);
+//	    if (compareResult == 0) {
+//	    	String newFirstName = c1.getFirstName();
+//			compareResult = firstName.compareTo(newFirstName);
+//	    }
+//	    return compareResult;
+//	}
+	
 }
