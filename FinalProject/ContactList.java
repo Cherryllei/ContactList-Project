@@ -50,7 +50,11 @@ public class ContactList {
 	
 	/**
 	 * Sorts Contact objects by lastName. If the lastNames are the same,
-	 * sorts Contact objects by firstName.
+	 * sorts Contact objects by firstName. Uses method compare() within
+	 * Interface Comparator to compare two Contact objects at once;
+	 * returns either an int less than zero, zero, or an int greater than
+	 * zero and uses Collections.sort() to sort the Contact objects in
+	 * ascending order. 
 	 * 
 	 * @author EL
 	 */
