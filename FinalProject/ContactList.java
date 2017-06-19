@@ -33,13 +33,11 @@ public class ContactList {
 	}
 
 	/**
-	 * Creates a new ArrayList with the search results and orders the list.
-	 * Sorts Contact objects by lastName. If the lastNames are the same,
-	 * sorts Contact objects by firstName. Uses method compareTo()
-	 * defined within the Contact class.
+	 * Creates a new ArrayList of Contacts. Sorts Contact objects 
+	 * by using the compareTo() defined within the Contact class.
+	 * 
 	 * @author EL
 	 */
-	
 	public void sortContacts() {
 		List<Contact> orderedContactList = new ArrayList<Contact>();
 		for (int i = 0; i < contacts.size(); i++)
