@@ -122,7 +122,7 @@ public class Contact implements Comparable<Contact> {
 			String newFirstName = c.getFirstName();
 			compareResult = firstName.compareTo(newFirstName);
 		}
-		return compareResult;
+		return compareResult; 
 	}
 
 }
