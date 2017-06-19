@@ -1,5 +1,7 @@
 package FinalProject;
 
+import java.io.Serializable;
+
 /**
  * One object of class Contact stores the first and last name, street address,
  * email address, phone number, and any notes for one contact.
@@ -7,7 +9,13 @@ package FinalProject;
  * @author Chunlei Li
  */
 
-public class Contact {
+public class Contact implements Serializable {
+	/**
+	 * Default serialize ID
+	 * 
+	 * @author cl
+	 */
+	private static final long serialVersionUID = 1L;
 	private String firstName;
 	private String lastName;
 	private String streetAddress;
