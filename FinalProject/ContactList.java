@@ -3,6 +3,7 @@ package FinalProject;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.io.*;
 
 /**
  * One object of class ContactList represents a whole list of Contacts
@@ -18,9 +19,23 @@ public class ContactList {
 	 * Load contact list from disk If there's no contact list file, create a new
 	 * one
 	 * 
-	 * @author CL
+	 * @author Chunlei
 	 */
 	public void loadContactList() {
+		FileInputStream inFile;
+		ObjectInputStream inObject;
+		try {
+			inFile = new FileInputStream("data");
+			inObject = new ObjectInputStream(inFile);
+			contacts = (List<Contact>) inObject.readObject();
+			inFile.close();
+			inObject.close();
+		} catch (IOException ioe) {
+			System.out.println(
+					"Error reading from the file: " + ioe.getMessage());
+		} catch (ClassNotFoundException cnfe) {
+			System.out.println("Error in casting to Rectangle: " + cnfe);
+		}
 
 	}
 
@@ -45,12 +60,24 @@ public class ContactList {
 	/**
 	 * Save contact list to disk
 	 * 
-	 * @author CL
+	 * @author Chunlei
 	 */
 	public void saveContactList() {
-		return;
+		FileOutputStream outFile;
+		ObjectOutputStream outObject;
+		try {
+			outFile = new FileOutputStream("data");
+			outObject = new ObjectOutputStream(outFile);
+			outObject.writeObject(contacts);
+			outFile.close();
+			outObject.close();
+		} catch (IOException ioe) {
+			ioe.printStackTrace();
+			System.out.println(
+					"Error writing objects to the file: " + ioe.getMessage());
+		}
 	}
-	
+
 	/**
 	 * Returns a string with all the contacts from the contact list
 	 * 
