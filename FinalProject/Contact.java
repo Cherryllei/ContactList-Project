@@ -1,6 +1,5 @@
 package FinalProject;
 
-
 /**
  * One object of class Contact stores the first and last name, street address,
  * email address, phone number, and any notes for one contact.
@@ -8,7 +7,7 @@ package FinalProject;
  * @author Chunlei Li
  */
 
-public class Contact /*implements Comparable<Contact>*/ {
+public class Contact implements Comparable<Contact> {
 	private String firstName;
 	private String lastName;
 	private String streetAddress;
@@ -24,7 +23,7 @@ public class Contact /*implements Comparable<Contact>*/ {
 	public void setFirstName(String newFirstName) {
 		firstName = newFirstName;
 	}
-	
+
 	/**
 	 * Gets the value of firstName
 	 * 
@@ -42,7 +41,7 @@ public class Contact /*implements Comparable<Contact>*/ {
 	public void setLastName(String newLastName) {
 		lastName = newLastName;
 	}
-	
+
 	/**
 	 * Gets the value of lastName
 	 * 
@@ -90,8 +89,8 @@ public class Contact /*implements Comparable<Contact>*/ {
 
 	/**
 	 * Returns a formatted string containing the lastName, firstName,
-	 * streetAddress, emailAddress, phoneNumber, and notes of each
-	 * Contact object.
+	 * streetAddress, emailAddress, phoneNumber, and notes of each Contact
+	 * object.
 	 * 
 	 * @author EL
 	 */
@@ -105,21 +104,25 @@ public class Contact /*implements Comparable<Contact>*/ {
 		returnString += "Notes: " + notes + "\n";
 		return returnString;
 	}
-	
+
 	/**
-	 * Sorts the Contacts by lastName. If the lastNames are the same,
-	 * sorts Contacts by firstName.
+	 * Compares one Contact to another Contact object (passed as a
+	 * parameter) using lastName. Returns a negative int if the Contact
+	 * object's lastName is less than the passed Contact object's 
+	 * lastName, a positive int if the Contact object's lastName is
+	 * greater than the passed Contact object's lastName, and a zero if
+	 * the lastNames are the same.
 	 * 
-	 * @author JD
+	 * @author EL
 	 */
-//	public int compareTo(Contact c1) {
-//		String newLastName = c1.getLastName();
-//		int compareResult = lastName.compareTo(newLastName);
-//	    if (compareResult == 0) {
-//	    	String newFirstName = c1.getFirstName();
-//			compareResult = firstName.compareTo(newFirstName);
-//	    }
-//	    return compareResult;
-//	}
-	
+	public int compareTo(Contact c) {
+		String newLastName = c.getLastName();
+		int compareResult = lastName.compareTo(newLastName);
+		if (compareResult == 0) {
+			String newFirstName = c.getFirstName();
+			compareResult = firstName.compareTo(newFirstName);
+		}
+		return compareResult;
+	}
+
 }

@@ -1,7 +1,6 @@
 package FinalProject;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Collections;
 import java.util.List;
 
@@ -34,41 +33,18 @@ public class ContactList {
 	}
 
 	/**
-	 * Creates a new ArrayList with the search results and orders the list
-	 * 
-	 * @author CL
-	 */
-	/* public List<Contact> searchContacts(String lastName) {
-		List<Contact> searchResults = new ArrayList<Contact>();
-		for (Contact temp : contacts) {
-			String compareContact = temp.getLastName();
-			if (compareContact.equalsIgnoreCase(lastName)){
-				searchResults.add(temp);
-		return searchResults;
-			}
-		} */
-	
-	/**
+	 * Creates a new ArrayList with the search results and orders the list.
 	 * Sorts Contact objects by lastName. If the lastNames are the same,
-	 * sorts Contact objects by firstName. Uses method compare() within
-	 * Interface Comparator to compare two Contact objects at once;
-	 * returns either an int less than zero, zero, or an int greater than
-	 * zero and uses Collections.sort() to sort the Contact objects in
-	 * ascending order. 
-	 * 
+	 * sorts Contact objects by firstName. Uses method compareTo()
+	 * defined within the Contact class.
 	 * @author EL
 	 */
-	public List<Contact> orderedContactList = new ArrayList<Contact>();
 	
 	public void sortContacts() {
-		Collections.sort(contacts, new Comparator<Contact>() {
-			public int compare(Contact c1, Contact c2) {
-				int result = c1.getLastName().compareToIgnoreCase(c2.getLastName());
-				if (result != 0)
-					return result;
-				return c1.getFirstName().compareToIgnoreCase(c2.getFirstName());
-			}
-		});
+		List<Contact> orderedContactList = new ArrayList<Contact>();
+		for (int i = 0; i < contacts.size(); i++)
+			orderedContactList.add(contacts.get(i));
+		Collections.sort(contacts); 
 	}
 		
 	/**
