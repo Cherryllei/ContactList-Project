@@ -1,5 +1,6 @@
 package FinalProject;
 
+import java.io.Serializable;
 /**
  * One object of class Contact stores the first and last name, street address,
  * email address, phone number, and any notes for one contact.
@@ -7,7 +8,8 @@ package FinalProject;
  * @author Chunlei Li
  */
 
-public class Contact implements Comparable<Contact> {
+public class Contact implements Comparable<Contact>, Serializable {
+	private static final long serialVersionUID = 1L;
 	private String firstName;
 	private String lastName;
 	private String streetAddress;
@@ -105,19 +107,21 @@ public class Contact implements Comparable<Contact> {
 	}
 	
 	/**
-	 * Sorts the contacts by lastName. If the lastName is equal, 
-	 * sorts the contacts by firstName.
+	 * Compares one Contact to another Contact object (passed as parameter)
+	 * using lastName. Returns a negative int if the Contact object's lastName
+	 * is less than the parameter Contact's lastName, a positive int if the
+	 * Contact object's lastName is greater than the parameter Contact's lastName,
+	 * and a zero if the lastNames are the same.
 	 * 
-	 * @author JD
+	 * @author EL
 	 */
-	public int compareTo(Contact c1){
-		String newLastName = c1.getLastName();
+	public int compareTo(Contact c) {
+		String newLastName = c.getLastName();
 		int compareResult = lastName.compareTo(newLastName);
-	    if (compareResult == 0) {
-			String newFirstName = c1.getFirstName();
+		if (compareResult == 0) {
+			String newFirstName = c.getFirstName();
 			compareResult = firstName.compareTo(newFirstName);
-	    }
-	    
-	    return compareResult;
+		}
+		return compareResult; 
 	}
 }

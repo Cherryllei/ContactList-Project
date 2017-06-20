@@ -1,7 +1,14 @@
 package FinalProject;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.ObjectInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.IOException;
 
 /**
  * One object of class ContactList represents a whole list of Contacts
@@ -13,13 +20,27 @@ public class ContactList {
 	private List<Contact> contacts = new ArrayList<Contact>();
 
 	/**
-	 * Load contact list from disk If there's no contact list file, create a new
+	 * Load contact list from disk. If there's no contact list file, create a new
 	 * one
 	 * 
 	 * @author CL
 	 */
 	public void loadContactList() {
-
+		FileInputStream inFile;
+		ObjectInputStream inObject;
+		try {
+			inFile = new FileInputStream("data");
+			inObject = new ObjectInputStream(inFile);
+			contacts = (List<Contact>) inObject.readObject();
+			inFile.close();
+			inObject.close();
+		} catch (FileNotFoundException fnfe){
+			saveContactList();
+		} catch (IOException ioe) {
+			System.out.println("Error reading from the file: " + ioe.getMessage());
+		} catch (ClassNotFoundException cnfe) {
+			System.out.println("Error in casting to Rectangle: " + cnfe);
+		}
 	}
 
 	/**
@@ -36,17 +57,28 @@ public class ContactList {
 	 * 
 	 * @author CL
 	 */
-	public List<Contact> searchContacts(String lastName) {
-		List<Contact> searchResults = new ArrayList<Contact>();
+	public String searchContacts(String lastName) {
+		String searchResults = "";
 		for (Contact contact : contacts) {
 			String compareContact = contact.getLastName();
 			if (compareContact.equalsIgnoreCase(lastName)){
-				searchResults.add(contact);
+				searchResults += contact + "\n";
 			}
 		}
-		
-		//Collections.sort(searchResults); Leave this here for Erin to see, will delete before submitting
 		return searchResults;
+	}
+	
+	/**
+	 * Creates a new ArrayList of Contacts. Sorts Contact objects 
+	 * by using the compareTo() defined within the Contact class.
+	 * 
+	 * @author EL
+	 */
+	public void sortContacts() {
+		List<Contact> orderedContactList = new ArrayList<Contact>();
+		for (int i = 0; i < contacts.size(); i++)
+			orderedContactList.add(contacts.get(i));
+		Collections.sort(contacts); 
 	}
 
 	/**
@@ -55,7 +87,19 @@ public class ContactList {
 	 * @author CL
 	 */
 	public void saveContactList() {
-		return;
+		FileOutputStream outFile;
+		ObjectOutputStream outObject;
+		try {
+			outFile = new FileOutputStream("data");
+			outObject = new ObjectOutputStream(outFile);
+			outObject.writeObject(contacts);
+			outFile.close();
+			outObject.close();
+		} catch (IOException ioe) {
+			ioe.printStackTrace();
+			System.out.println(
+					"Error writing objects to the file: " + ioe.getMessage());
+		}
 	}
 	
 	/**
@@ -64,6 +108,11 @@ public class ContactList {
 	 * @author JD
 	 */
 	public String toString() {
-		return contacts.toString();
+		sortContacts();
+		String contactList = "";
+		for (Contact contact : contacts) {
+			contactList += contact.toString()+"\n";
+		}
+		return contactList;
 	}
 }
