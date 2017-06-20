@@ -42,7 +42,7 @@ public class ContactList {
 		List<Contact> orderedContactList = new ArrayList<Contact>();
 		for (int i = 0; i < contacts.size(); i++)
 			orderedContactList.add(contacts.get(i));
-		Collections.sort(contacts); 
+		Collections.sort(orderedContactList); 
 	}
 		
 	/**
