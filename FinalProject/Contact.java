@@ -106,12 +106,11 @@ public class Contact implements Comparable<Contact> {
 	}
 
 	/**
-	 * Compares one Contact to another Contact object (passed as a
-	 * parameter) using lastName. Returns a negative int if the Contact
-	 * object's lastName is less than the parameter Contact's 
-	 * lastName, a positive int if the Contact object's lastName is
-	 * greater than the parameter Contact's lastName, and a zero if
-	 * the lastNames are the same.
+	 * Compares one Contact to another Contact object (passed as parameter)
+	 * using lastName. Returns a negative int if the Contact object's lastName
+	 * is less than the parameter Contact's lastName, a positive int if the
+	 * Contact object's lastName is greater than the parameter Contact's lastName,
+	 * and a zero if the lastNames are the same.
 	 * 
 	 * @author EL
 	 */
