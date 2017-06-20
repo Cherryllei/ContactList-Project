@@ -38,10 +38,10 @@ public class ContactList {
 	 */
 	public List<Contact> searchContacts(String lastName) {
 		List<Contact> searchResults = new ArrayList<Contact>();
-		for (Contact temp : contacts) {
-			String compareContact = temp.getLastName();
+		for (Contact contact : contacts) {
+			String compareContact = contact.getLastName();
 			if (compareContact.equalsIgnoreCase(lastName)){
-				searchResults.add(temp);
+				searchResults.add(contact);
 			}
 		}
 		
