@@ -1,5 +1,4 @@
 package FinalProject;
-import java.io.*;
 
 /**
  * Creates two Contacts Objects and save them in a file on the disk. Then this
