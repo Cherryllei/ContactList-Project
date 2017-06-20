@@ -58,6 +58,7 @@ public class ContactList {
 	 * @author CL
 	 */
 	public String searchContacts(String lastName) {
+		sortContacts();
 		String searchResults = "";
 		for (Contact contact : contacts) {
 			String compareContact = contact.getLastName();

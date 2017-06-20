@@ -38,7 +38,7 @@ public class ContactListApp {
 				break;
 			case "2":
 				System.out.println("\n[2] View all contacts\n");
-				System.out.println(allContacts);
+				System.out.print(allContacts);
 				break;
 			case "3":
 				System.out.println("\n[3] Search contacts by last name\n");
