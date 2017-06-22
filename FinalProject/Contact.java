@@ -91,7 +91,7 @@ public class Contact implements Comparable<Contact>, Serializable {
 
 	/**
 	 * Returns a string containing the last name, first name, street address,
-	 * email, phone number and notes of the Contact
+	 * email, phone number and notes of the Contact.
 	 * 
 	 * @author JD
 	 */
@@ -117,10 +117,10 @@ public class Contact implements Comparable<Contact>, Serializable {
 	 */
 	public int compareTo(Contact c) {
 		String newLastName = c.getLastName();
-		int compareResult = lastName.compareTo(newLastName);
+		int compareResult = lastName.compareToIgnoreCase(newLastName);
 		if (compareResult == 0) {
 			String newFirstName = c.getFirstName();
-			compareResult = firstName.compareTo(newFirstName);
+			compareResult = firstName.compareToIgnoreCase(newFirstName);
 		}
 		return compareResult; 
 	}
