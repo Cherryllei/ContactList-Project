@@ -117,10 +117,10 @@ public class Contact implements Comparable<Contact>, Serializable {
 	 */
 	public int compareTo(Contact c) {
 		String newLastName = c.getLastName();
-		int compareResult = lastName.compareTo(newLastName);
+		int compareResult = lastName.compareToIgnoreCase(newLastName);
 		if (compareResult == 0) {
 			String newFirstName = c.getFirstName();
-			compareResult = firstName.compareTo(newFirstName);
+			compareResult = firstName.compareToIgnoreCase(newFirstName);
 		}
 		return compareResult; 
 	}
