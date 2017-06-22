@@ -39,7 +39,7 @@ public class ContactList {
 		} catch (IOException ioe) {
 			System.out.println("Error reading from the file: " + ioe.getMessage());
 		} catch (ClassNotFoundException cnfe) {
-			System.out.println("Error in casting to Rectangle: " + cnfe);
+			System.out.println("Error in casting to Contact: " + cnfe);
 		}
 	}
 
