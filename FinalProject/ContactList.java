@@ -11,7 +11,7 @@ import java.io.ObjectOutputStream;
 import java.io.IOException;
 
 /**
- * One object of class ContactList represents a whole list of Contacts
+ * One object of class ContactList represents a whole list of Contacts.
  * 
  * @author Chunlei Li
  */
@@ -20,8 +20,8 @@ public class ContactList {
 	private List<Contact> contacts = new ArrayList<Contact>();
 
 	/**
-	 * Load contact list from disk. If there's no contact list file, create a
-	 * new one
+	 * Load ContactList from disk. If there's no contact list file, create a
+	 * new Contact.
 	 * 
 	 * @author CL
 	 */
@@ -45,7 +45,7 @@ public class ContactList {
 	}
 
 	/**
-	 * Add a new contact to the contact list
+	 * Add a new Contact to the ContactList.
 	 * 
 	 * @author CL
 	 */
@@ -54,7 +54,8 @@ public class ContactList {
 	}
 
 	/**
-	 * Creates a new ArrayList with the search results and orders the list
+	 * Creates a new ArrayList with the search results and
+	 * alphabetizes the list by lastName.
 	 * 
 	 * @author CL
 	 */
@@ -83,7 +84,7 @@ public class ContactList {
 	}
 
 	/**
-	 * Save contact list to disk
+	 * Saves ContactList to disk.
 	 * 
 	 * @author CL
 	 */
@@ -104,7 +105,7 @@ public class ContactList {
 	}
 
 	/**
-	 * Returns a string with all the contacts from the contact list
+	 * Returns a string with all the Contacts from the ContactList.
 	 * 
 	 * @author JD
 	 */
