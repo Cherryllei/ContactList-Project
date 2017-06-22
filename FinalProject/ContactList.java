@@ -12,7 +12,7 @@ import java.io.IOException;
 
 /**
  * One object of class ContactList represents a whole list of Contacts
- *  
+ * 
  * @author Chunlei Li
  */
 
@@ -20,8 +20,8 @@ public class ContactList {
 	private List<Contact> contacts = new ArrayList<Contact>();
 
 	/**
-	 * Load contact list from disk. If there's no contact list file, create a new
-	 * one
+	 * Load contact list from disk. If there's no contact list file, create a
+	 * new one
 	 * 
 	 * @author CL
 	 */
@@ -34,12 +34,13 @@ public class ContactList {
 			contacts = (List<Contact>) inObject.readObject();
 			inFile.close();
 			inObject.close();
-		} catch (FileNotFoundException fnfe){
+		} catch (FileNotFoundException fnfe) {
 			saveContactList();
 		} catch (IOException ioe) {
-			System.out.println("Error reading from the file: " + ioe.getMessage());
+			System.out.println(
+					"Error reading from the file: " + ioe.getMessage());
 		} catch (ClassNotFoundException cnfe) {
-			System.out.println("Error in casting to Rectangle: " + cnfe);
+			System.out.println("Error in casting to Contact: " + cnfe);
 		}
 	}
 
@@ -62,16 +63,16 @@ public class ContactList {
 		String searchResults = "";
 		for (Contact contact : contacts) {
 			String compareContact = contact.getLastName();
-			if (compareContact.equalsIgnoreCase(lastName)){
+			if (compareContact.equalsIgnoreCase(lastName)) {
 				searchResults += contact + "\n";
 			}
 		}
 		return searchResults;
 	}
-	
+
 	/**
-	 * Creates a new ArrayList of Contacts. Sorts Contact objects 
-	 * by using the compareTo() defined within the Contact class.
+	 * Creates a new ArrayList of Contacts. Sorts Contact objects by using the
+	 * compareTo() defined within the Contact class.
 	 * 
 	 * @author EL
 	 */
@@ -79,7 +80,7 @@ public class ContactList {
 		List<Contact> orderedContactList = new ArrayList<Contact>();
 		for (int i = 0; i < contacts.size(); i++)
 			orderedContactList.add(contacts.get(i));
-		Collections.sort(contacts); 
+		Collections.sort(contacts);
 	}
 
 	/**
@@ -102,7 +103,7 @@ public class ContactList {
 					"Error writing objects to the file: " + ioe.getMessage());
 		}
 	}
-	
+
 	/**
 	 * Returns a string with all the contacts from the contact list
 	 * 
@@ -112,7 +113,7 @@ public class ContactList {
 		sortContacts();
 		String contactList = "";
 		for (Contact contact : contacts) {
-			contactList += contact.toString()+"\n";
+			contactList += contact.toString() + "\n";
 		}
 		return contactList;
 	}

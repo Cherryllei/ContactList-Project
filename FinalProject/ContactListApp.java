@@ -3,10 +3,13 @@ package FinalProject;
 import java.util.Scanner;
 
 /**
- * Creates an object of ContactList and three objects of Contact, shows all
- * the contacts and performs searches by last name
+ * Creates an object of ContactList. User can:
+ * add Contact objects into the ContactList, print out a list of all Contacts
+ * (sorted alphabetically by lastName and firstName if lastNames are the same), 
+ * and search for a specific Contact. The ContactList is automatically saved to
+ * disk and can be retrieved and loaded into memory.
  * 
- * @author JD
+ * @author EL
  */
 
 public class ContactListApp {
@@ -22,7 +25,7 @@ public class ContactListApp {
 	}
 
 	/**
-	 * Display the menu and call the corresponding method
+	 * Display the menu and calls the corresponding method.
 	 * 
 	 * @author JD
 	 */
@@ -56,12 +59,14 @@ public class ContactListApp {
 	}
 
 	/**
-	 * Begins to add a contact
+	 * Begins to add contact by asking for the lastName.
+	 * Will not proceed to ask for further information until lastName
+	 * is filled out.
 	 * 
-	 * @author JD
+	 * @author EL
 	 */
 	public static void addContact(Scanner console, ContactList allContacts) {
-		System.out.print("Please type last name (required): \n> ");
+		System.out.print("Please type a last name (required): \n> ");
 		String lastName;
 		lastName = console.nextLine();
 		if (lastName.trim().length() <= 0) {
@@ -74,34 +79,34 @@ public class ContactListApp {
 	}
 
 	/**
-	 * Prompts the user for the information needed to create the contact
+	 * Prompts the user for the information needed to create the Contact.
 	 * 
 	 * @author JD
 	 */
 	public static Contact promptUser(Scanner console, String lastName) {
 		Contact contact = new Contact();
 		contact.setLastName(lastName);
-	
+
 		System.out.print("Type a first name: \n> ");
 		contact.setFirstName(console.nextLine());
-	
+
 		System.out.print("Type a street address: \n> ");
 		contact.setStreetAddress(console.nextLine());
-	
+
 		System.out.print("Type an email: \n> ");
 		contact.setEmailAddress(console.nextLine());
-	
+
 		System.out.print("Type a phone number: \n> ");
 		contact.setPhoneNumber(console.nextLine());
-	
+
 		System.out.print("If you’d like to add some notes, type them: \n> ");
 		contact.setNotes(console.nextLine());
 		return contact;
 	}
-	
+
 	/**
-	 * Gets contact list and a String with a last name
-	 * Searchs contact list by last name and returns the results
+	 * Searches ContactList by lastName and returns the results
+	 * as a string.
 	 * 
 	 * @author JD
 	 */
