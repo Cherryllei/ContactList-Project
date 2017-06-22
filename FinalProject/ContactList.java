@@ -20,8 +20,8 @@ public class ContactList {
 	private List<Contact> contacts = new ArrayList<Contact>();
 
 	/**
-	 * Load ContactList from disk. If there's no contact list file, create a
-	 * new Contact.
+	 * Load ContactList from disk. If there's no contact list file, create a new
+	 * Contact.
 	 * 
 	 * @author CL
 	 */
@@ -37,8 +37,7 @@ public class ContactList {
 		} catch (FileNotFoundException fnfe) {
 			saveContactList();
 		} catch (IOException ioe) {
-			System.out.println(
-					"Error reading from the file: " + ioe.getMessage());
+			System.out.println("Error reading from the file: " + ioe.getMessage());
 		} catch (ClassNotFoundException cnfe) {
 			System.out.println("Error in casting to Contact: " + cnfe);
 		}
@@ -54,34 +53,24 @@ public class ContactList {
 	}
 
 	/**
-	 * Creates a new ArrayList with the search results and
-	 * alphabetizes the list by lastName.
+	 * Creates a new ArrayList with the search results and alphabetizes the list
+	 * by lastName (and firstName, if necessary).
 	 * 
 	 * @author CL
 	 */
 	public String searchContacts(String lastName) {
-		sortContacts();
-		String searchResults = "";
+		Collections.sort(contacts);
+		String resultString = "";
 		for (Contact contact : contacts) {
 			String compareContact = contact.getLastName();
 			if (compareContact.equalsIgnoreCase(lastName)) {
-				searchResults += contact + "\n";
+				resultString += contact + "\n";
 			}
 		}
-		return searchResults;
-	}
-
-	/**
-	 * Creates a new ArrayList of Contacts. Sorts Contact objects by using the
-	 * compareTo() defined within the Contact class.
-	 * 
-	 * @author EL
-	 */
-	public void sortContacts() {
-		List<Contact> orderedContactList = new ArrayList<Contact>();
-		for (int i = 0; i < contacts.size(); i++)
-			orderedContactList.add(contacts.get(i));
-		Collections.sort(contacts);
+		if (resultString.length() == 0) {
+			resultString = "There’s no contact with that last name.\n\n";
+		}
+		return resultString;
 	}
 
 	/**
@@ -100,22 +89,26 @@ public class ContactList {
 			outObject.close();
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
-			System.out.println(
-					"Error writing objects to the file: " + ioe.getMessage());
+			System.out.println("Error writing objects to the file: " + ioe.getMessage());
 		}
 	}
 
 	/**
-	 * Returns a string with all the Contacts from the ContactList.
+	 * Returns a string with all the Contacts, alphabetized by
+	 * lastName (and firstName, if necessary), from the ContactList.
 	 * 
 	 * @author JD
 	 */
 	public String toString() {
-		sortContacts();
-		String contactList = "";
-		for (Contact contact : contacts) {
-			contactList += contact.toString() + "\n";
+		String returnString = "";
+		if (contacts.size() > 0) {
+			Collections.sort(contacts);
+			for (Contact contact : contacts) {
+				returnString += contact.toString() + "\n";
+			}
+		} else {
+			returnString = "There are no contacts in the contact list\n\n";
 		}
-		return contactList;
+		return returnString;
 	}
 }

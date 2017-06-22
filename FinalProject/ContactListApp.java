@@ -25,7 +25,7 @@ public class ContactListApp {
 	}
 
 	/**
-	 * Display the menu and calls the corresponding method.
+	 * Display the menu and proceeds with the user's choice.
 	 * 
 	 * @author JD
 	 */
@@ -60,7 +60,7 @@ public class ContactListApp {
 
 	/**
 	 * Begins to add contact by asking for the lastName.
-	 * Will not proceed to ask for further information until lastName
+	 * Will not proceed to ask for further information if lastName
 	 * is filled out.
 	 * 
 	 * @author EL
@@ -105,18 +105,13 @@ public class ContactListApp {
 	}
 
 	/**
-	 * Searches ContactList by lastName and returns the results
-	 * as a string.
+	 * Searches ContactList by lastName and prints the results.
 	 * 
 	 * @author JD
 	 */
 	public static void searchContacts(Scanner console, ContactList contactList){
-		System.out.print("\nEnter a last name:\n> ");
+		System.out.print("Enter a last name:\n> ");
 		String searchResults = contactList.searchContacts(console.nextLine());
-		if (searchResults.length() > 0) {
-			System.out.println("\n" + searchResults);
-		} else {
-			System.out.println("\nThere’s no contact with that last name.\n");
-		}
+		System.out.print("\n" + searchResults);
 	}
 }
