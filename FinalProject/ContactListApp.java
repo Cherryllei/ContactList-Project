@@ -59,11 +59,11 @@ public class ContactListApp {
 	}
 
 	/**
-	 * Begins to add a contact by asking for the lastName.
-     * Will not proceed to ask for further information until lastName
-     * is filled out.
-     * 
-     * @author EL
+	 * Begins to add contact by asking for the lastName.
+	 * Will not proceed to ask for further information until lastName
+	 * is filled out.
+	 * 
+	 * @author EL
 	 */
 	public static void addContact(Scanner console, ContactList allContacts) {
 		System.out.print("Please type a last name (required): \n> ");
@@ -86,27 +86,27 @@ public class ContactListApp {
 	public static Contact promptUser(Scanner console, String lastName) {
 		Contact contact = new Contact();
 		contact.setLastName(lastName);
-	
+
 		System.out.print("Type a first name: \n> ");
 		contact.setFirstName(console.nextLine());
-	
+
 		System.out.print("Type a street address: \n> ");
 		contact.setStreetAddress(console.nextLine());
-	
+
 		System.out.print("Type an email: \n> ");
 		contact.setEmailAddress(console.nextLine());
-	
+
 		System.out.print("Type a phone number: \n> ");
 		contact.setPhoneNumber(console.nextLine());
-	
+
 		System.out.print("If you’d like to add some notes, type them: \n> ");
 		contact.setNotes(console.nextLine());
 		return contact;
 	}
-	
+
 	/**
 	 * Searches ContactList by lastName and returns the results
-     * as a String.
+	 * as a string.
 	 * 
 	 * @author JD
 	 */
