@@ -6,7 +6,7 @@ package FinalProject;
  * last name. If two Contacts have the same last name, they Contacts are 
  * then sorted by first name.
  * 
- * @author Erin Liao
+ * @author Erin Liao (test hello)
  */
 
 public class UseCase2 {
